@@ -1,0 +1,154 @@
+<%- include('./base/header.ejs') %>
+
+
+<div
+  class="center"
+    >
+  <div
+    style="
+      background-color: #242121;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      margin-top: 50px;
+    "
+  >
+    <h2 style="text-align: center; margin-bottom: 20px; color: #ffffff">
+      Update Your Data
+    </h2>
+    <form action="/update/<%= record._id%>" method="post">
+      <label
+        for="name"
+        style="
+          font-weight: bold;
+          margin-bottom: 5px;
+          display: block;
+          color: #ffffff;
+        "
+        >Name:</label
+      >
+      <input
+        autocomplete="off"
+        type="text"
+        id="name"
+        value="<%= record.name%>"
+        name="name"
+        placeholder="Enter your name"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        "
+      />
+
+      <label
+        for="city"
+        style="
+          font-weight: bold;
+          margin-bottom: 5px;
+          display: block;
+          color: #f8f0f0;
+        "
+        >City:</label
+      >
+      <input
+        autocomplete="off"
+        type="text"
+        id="city"
+        name="city"
+        value="<%= record.city %>"
+        placeholder="Enter your city"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        "
+      />
+
+      <label
+        for="email"
+        style="
+          font-weight: bold;
+          margin-bottom: 5px;
+          display: block;
+          color: #ffffff;
+        "
+        >Email:</label
+      >
+      <input
+        autocomplete="off"
+        type="email"
+        id="email"
+        name="email"
+        value="<%= record.email %>"
+        placeholder="Enter your email"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        "
+      />
+
+      <label
+        for="contact"
+        style="
+          font-weight: bold;
+          margin-bottom: 5px;
+          display: block;
+          color: #ffffff;
+        "
+        >Contact:</label
+      >
+      <input
+        autocomplete="off"
+        type="tel"
+        id="contact"
+        name="contact"
+        value="<%= record.contact %>"
+        placeholder="Enter your contact number"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        "
+      />
+
+      <input
+        autocomplete="off"
+        type="submit"
+        value="Submit"
+        style="
+          background-color: #007bff;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          transition: background-color 0.3s ease;
+        "
+      />
+    </form>
+  </div>
+</div>
+
+<!-- <%- include('./base/footer.ejs') %> -->

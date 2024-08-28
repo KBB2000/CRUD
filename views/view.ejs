@@ -1,0 +1,25 @@
+<%- include('./base/header.ejs') %>
+
+<div
+  class="record-container"
+  style="
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h2 style="text-align: center; margin-bottom: 20px;">Record Details</h2>
+  
+  <p><strong>Name:</strong> <%= record.name %></p>
+  <p><strong>City:</strong> <%= record.city %></p>
+  <p><strong>Email:</strong> <%= record.email %></p>
+  <p><strong>Contact:</strong> <%= record.contact %></p>
+
+  <a href="/read" style="display: inline-block; border-radius: 5px;padding: 10px; background-color: yellow; margin-top: 20px; color: #007bff;">Back to List</a>
+</div>
+
+<%- include('./base/footer.ejs') %>

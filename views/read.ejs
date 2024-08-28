@@ -1,0 +1,95 @@
+<%- include('./base/header.ejs') %>
+
+<div
+  class="table-container"
+  style="
+    width: 100%;
+    box-shadow: 0 0 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  "
+>
+  <table
+    style="
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    "
+  >
+    <thead>
+      <tr style="background-color: hsl(211, 100%, 50%); cursor: pointer; color: white">
+        <th style="padding: 15px; text-align: left">Name</th>
+        <th style="padding: 15px; text-align: left">City</th>
+        <th style="padding: 15px; text-align: left">Email</th>
+        <th style="padding: 15px; text-align: left">Contact</th>
+        <th style="padding: 15px; text-align: left;">
+         Edit
+        </th>
+        <th style="padding: 15px; text-align: left;">
+          Delete
+        </th>
+        <th style="padding: 15px; text-align: left;">
+          View
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (records && records.length > 0) { %> <% records.forEach(record => {
+      %>
+      <tr
+        style="transition: background-color 0.3s ease; cursor: pointer"
+        onmouseover="this.style.backgroundColor='#e0f7fa';"
+        onmouseout="this.style.backgroundColor='transparent';"
+      >
+        <td
+          style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <%= record.name %>
+        </td>
+        <td
+          style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <%= record.city %>
+        </td>
+        <td
+          style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <%= record.email %>
+        </td>
+        <td
+          style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <%= record.contact %>
+        </td>
+        <td
+          style="padding: 10px; background-color: yellow; border-radius: 8px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+        <a href="/edit/<%= record._id %>">edit</a>
+        </td>
+        <td
+          style="padding: 15px;background-color: rgb(255, 12, 49); border-radius: 8px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <a href="/delete/<%= record._id %>">Delete</a>
+        </td>
+        <td
+          style="padding: 15px;background-color: rgb(3, 36, 169); border-radius: 8px; text-align: left; border-bottom: 1px solid #ddd"
+        >
+          <a href="/view/<%= record._id %>">View</a>
+        </td>
+      </tr>
+      <% }); %> <% } else { %>
+      <tr>
+        <td colspan="4" style="padding: 20px; text-align: center; color: #666">
+          No records found
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('./base/footer.ejs') %>
